@@ -1,1 +1,1 @@
-# MentSea
+# MentalAid
