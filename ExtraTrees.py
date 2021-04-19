@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Model Management
 from comet_ml import Experiment
@@ -34,6 +35,21 @@ def train(df):
 
     # Fit the model on the whole dataset
     etc.fit(X, y)
+
+    # Computing the importance of each feature
+    feature_importance = etc.feature_importances_
+
+    # Normalizing the individual importances
+    feature_importance_normalized = np.std([tree.feature_importances_ for tree in 
+                                        etc.estimators_],
+                                        axis = 0)
+    
+    fics = pd.DataFrame()
+    fics['Feature'] = X.columns.tolist()
+    fics['Importance'] = feature_importance_normalized
+    
+    fics.to_csv('/Users/aakritigupta/Desktop/Hackathon 2021/MentSea/MentSea/ETC_FeatureImportances.csv')
+    
 
     # Evaluate the model
     # cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=1)
@@ -81,7 +97,7 @@ def main():
     # print(dataDf.shape)
     # print(dataDf.head())
     etcObj = train(dataDf)
-    test = val(dataDf, etcObj)
+    # test = val(dataDf, etcObj)
     # print(test.columns)
 
 
