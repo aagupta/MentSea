@@ -20,6 +20,7 @@ Once a user has created an account, every time they open up the app, they are as
 Each time a user enters a response, they are rewarded with a token for checking in that day. If the user continues to check in for a set of consecutive days (TBD), the user can either personalize their avatar/character or get a monetary award (like a free Starbucks drink or depending on our partnerships, the reward could change).
 
 ---
+Video presentaion: https://www.youtube.com/watch?v=eYY0gbfMSME
 
 Try our demo here:
 http://datadoctors.ml
