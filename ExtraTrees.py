@@ -58,7 +58,7 @@ def train(df):
 # Function to predict on the new validation dataset
 def val(df, modelObj):
     # Read in the new dataset
-    valDf = pd.read_csv('/Users/aakritigupta/Desktop/Hackathon 2021/MentSea/MentSea/Validation_2017.csv')
+    valDf = pd.read_csv('/Users/aakritigupta/Desktop/Hackathon 2021/MentSea/MentSea/Validation_2019.csv')
 
     # Drop unnecessary columns
     valDf2 = valDf.drop(columns=['Unnamed: 0'])
@@ -71,7 +71,7 @@ def val(df, modelObj):
     valDf2['Predictions'] = new_pred
 
     # Write the df to a CSV
-    valDf2.to_csv('/Users/aakritigupta/Desktop/Hackathon 2021/MentSea/MentSea/Predictions_2017.csv')
+    valDf2.to_csv('/Users/aakritigupta/Desktop/Hackathon 2021/MentSea/MentSea/Predictions_2019.csv')
 
     # return valDf
 
